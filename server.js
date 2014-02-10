@@ -14,7 +14,7 @@ var configDB = require('./config/database.js');
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
 
-// require('./config/passport')(passport); // pass passport for configuration
+ require('./config/passport')(passport); // pass passport for configuration
 
 app.configure(function() {
 
@@ -26,7 +26,7 @@ app.configure(function() {
 	app.set('view engine', 'ejs'); // set up ejs for templating
 
 	// required for passport
-	app.use(express.session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+	app.use(express.session({ secret: 'maarytahruar' })); // session secret
 	app.use(passport.initialize());
 	app.use(passport.session()); // persistent login sessions
 	app.use(flash()); // use connect-flash for flash messages stored in session
